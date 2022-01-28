@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Profile</title>
+        <link rel="stylesheet" href="val.css"/>
+	</head>
+	
+	<body>
+		<div class="main_page">
+		<div class="card", id="card">
+
+		<div class="front_card">
+		<h1>Would you be my Valentine?</h1>
+		<!--<img src="andres.jpg" width="250px" style="border-radius: 25px"> -->
+		<p>
+			<span onclick="flip()" style="color:red">Yes I love you &hearts;</span>
+			<br></br>
+			<span id="demo" onclick="onClick()" style="color:red">No I hate you + you stink</span>
+		</p>
+		</div>
+        
+        <div class="back_card">
+            <p><span onclick="flip()" style="color:red">I love you &hearts;&hearts;&hearts;</span></p>
+            <div id="area">
+            </div>
+        </div>
+        </div>
+        </div>
+	</body>
+	
+	<script>
+	var clicks = 0;
+
+    function flip(){
+		card.classList.toggle("flip");
+	}
+
+	function onClick() {
+        document.getElementById("demo").innerHTML = "YOU HIT THE WRONG BUTTON NOW REFRESH";
+		clicks += 1;
+		document.getElementById("clicks").innerHTML = clicks;
+	}
+	
+	var pics =["1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+  	];
+
+	var img = '';
+	for(ii=0; ii<pics.length; ii++) {
+		positiontop = Math.random()*500;
+		positionright = Math.random()*1000;
+		zindex = ii;
+
+		img += '<img src="'+pics[ii]+'" style="top: '+positiontop+'px;'+'right: '+positionright+'px;'+'z-index: '+zindex+';">';
+	}
+
+	document.getElementById('area').innerHTML= img;
+	</script>
+
+</html>
